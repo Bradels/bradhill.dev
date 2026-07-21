@@ -7,181 +7,311 @@
 <meta name="description" content="Brad Hill is a Melbourne-based AI and agentic engineer — building production LLM systems, MCP servers and multi-agent tooling. Agentforce Dev Lead at RACV with 4+ years on the Salesforce platform (Apex, LWC, Experience Cloud, MuleSoft).">
 <meta name="author" content="Brad Hill">
 <link rel="canonical" href="https://bradhill.dev/">
-<!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:title" content="Brad Hill — AI &amp; Agentic Engineer">
 <meta property="og:description" content="Melbourne-based AI &amp; agentic engineer building production LLM and multi-agent systems. Agentforce Dev Lead at RACV.">
 <meta property="og:url" content="https://bradhill.dev/">
+<meta property="og:image" content="https://bradhill.dev/assets/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230b1220'/%3E%3Cpath d='M4 20 L12 14 L18 22 L28 8' stroke='%23d9a441' stroke-width='2.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
 <style>
   :root{
-    --bg:#0b1220; --bg-soft:#111a2e; --panel:#131e36; --line:#22304f;
-    --ink:#e8edf7; --muted:#9fb0cc; --gold:#d9a441; --gold-soft:#f0c877;
-    --max:820px;
+    --bg:#0b1220; --bg-soft:#101a30; --panel:#131e36; --line:#22304f;
+    --ink:#e8edf7; --muted:#9fb0cc; --gold:#d9a441; --gold-soft:#f0c877; --gold-dim:rgba(217,164,65,.35);
+    --serif:Georgia,"Times New Roman",serif;
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    --max:960px;
   }
   *{box-sizing:border-box}
   html{scroll-behavior:smooth}
-  body{
-    margin:0; background:var(--bg); color:var(--ink);
-    font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-    -webkit-font-smoothing:antialiased;
+  body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.7 var(--sans);-webkit-font-smoothing:antialiased}
+  a{color:var(--gold-soft);text-decoration:none}
+  a:hover{color:var(--gold)}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+
+  /* ------- hero ------- */
+  .hero{
+    position:relative; min-height:62vh; display:flex; align-items:flex-end;
+    background:#0b1220 url('assets/hero.webp') center/cover no-repeat;
   }
-  a{color:var(--gold-soft); text-decoration:none}
-  a:hover{color:var(--gold); text-decoration:underline}
-  .wrap{max-width:var(--max); margin:0 auto; padding:0 24px}
-  /* kintsugi gold seam */
-  .seam{height:2px; border:0; margin:0;
-    background:linear-gradient(90deg,transparent,rgba(217,164,65,.15) 12%,var(--gold) 38%,var(--gold-soft) 52%,var(--gold) 66%,rgba(217,164,65,.15) 88%,transparent);}
-  header{padding:88px 0 44px}
-  .eyebrow{color:var(--gold); letter-spacing:.14em; text-transform:uppercase; font-size:12px; font-weight:600; margin:0 0 14px}
-  h1{font-size:clamp(30px,6vw,48px); line-height:1.08; margin:0 0 18px; font-weight:700; letter-spacing:-.02em}
-  h1 .amp{color:var(--gold)}
-  .lede{font-size:clamp(17px,2.6vw,20px); color:var(--muted); max-width:64ch; margin:0}
-  .meta{margin-top:24px; color:var(--muted); font-size:14px}
-  .meta b{color:var(--ink); font-weight:600}
-  nav.links{margin-top:28px; display:flex; flex-wrap:wrap; gap:10px}
-  nav.links a{
-    border:1px solid var(--line); background:var(--bg-soft); padding:9px 15px; border-radius:999px;
-    font-size:14px; color:var(--ink);
+  .hero::after{content:"";position:absolute;inset:0;
+    background:linear-gradient(180deg,rgba(11,18,32,.25) 0%,rgba(11,18,32,.55) 55%,var(--bg) 100%)}
+  .hero .wrap{position:relative;z-index:1;padding-bottom:56px;width:100%}
+  .hero .eyebrow{color:var(--gold-soft);letter-spacing:.18em;text-transform:uppercase;font-size:12px;font-weight:600;margin:0 0 10px;text-shadow:0 1px 8px rgba(0,0,0,.8)}
+  .hero h1{
+    font-family:var(--serif); font-size:clamp(44px,9vw,88px); line-height:1.02; margin:0;
+    font-weight:700; letter-spacing:.01em; text-shadow:0 2px 24px rgba(0,0,0,.85);
   }
-  nav.links a:hover{border-color:var(--gold); color:var(--gold-soft); text-decoration:none}
-  section{padding:52px 0}
-  h2{font-size:14px; letter-spacing:.14em; text-transform:uppercase; color:var(--gold); margin:0 0 24px; font-weight:600}
-  .grid{display:grid; gap:18px}
-  @media(min-width:640px){.grid.cols{grid-template-columns:1fr 1fr}}
-  .card{background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:20px 22px; transition:border-color .15s}
-  .card:hover{border-color:var(--gold)}
-  .card h3{margin:0 0 6px; font-size:17px}
-  .card p{margin:0; color:var(--muted); font-size:15px}
-  .tags{display:flex; flex-wrap:wrap; gap:7px; margin-top:14px}
-  .tag{font-size:12px; color:var(--gold-soft); border:1px solid var(--line); border-radius:6px; padding:3px 9px; background:var(--bg-soft)}
-  .role{display:flex; justify-content:space-between; gap:16px; align-items:baseline; flex-wrap:wrap}
-  .role .yr{color:var(--muted); font-size:13px; white-space:nowrap}
-  .role h3{margin:0; font-size:16px}
-  .role p{margin:4px 0 0; color:var(--muted); font-size:14px}
-  .stack{list-style:none; padding:0; margin:0; display:grid; gap:20px}
-  footer{padding:44px 0 80px; color:var(--muted); font-size:14px}
-  footer a{color:var(--gold-soft)}
-  .sig{color:var(--gold); font-weight:600}
+  .hero .sub{
+    font-family:var(--serif); font-style:italic; color:var(--gold-soft);
+    font-size:clamp(18px,3vw,26px); margin:10px 0 0; text-shadow:0 1px 12px rgba(0,0,0,.8);
+  }
+
+  /* ------- nav ------- */
+  nav.site{
+    position:sticky; top:0; z-index:10; background:rgba(11,18,32,.92); backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  nav.site ul{list-style:none;display:flex;gap:4px;margin:0;padding:0 16px;max-width:var(--max);margin-inline:auto}
+  nav.site a{display:block;padding:14px 14px;color:var(--muted);font-size:14px;letter-spacing:.06em;text-transform:uppercase}
+  nav.site a:hover{color:var(--gold-soft)}
+  nav.site .spacer{flex:1}
+  nav.site .mail a{color:var(--gold-soft)}
+
+  /* ------- sections ------- */
+  section{padding:64px 0}
+  h2{font-family:var(--serif);font-size:clamp(26px,4vw,34px);margin:0 0 8px;font-weight:700}
+  h2 .seamword{color:var(--gold)}
+  .kicker{color:var(--gold);letter-spacing:.14em;text-transform:uppercase;font-size:12px;font-weight:600;margin:0 0 10px}
+  .prose{color:var(--muted);max-width:68ch;font-size:17px}
+  .prose b{color:var(--ink)}
+  .prose .gold{color:var(--gold-soft)}
+  hr.seam{height:2px;border:0;margin:0;
+    background:linear-gradient(90deg,transparent,rgba(217,164,65,.12) 10%,var(--gold) 40%,var(--gold-soft) 52%,var(--gold) 64%,rgba(217,164,65,.12) 90%,transparent)}
+
+  /* ------- intro layout (text + portrait) ------- */
+  .intro-grid{display:grid;gap:36px;align-items:start}
+  @media(min-width:760px){.intro-grid{grid-template-columns:1fr minmax(240px,300px)}}
+  .portrait{position:relative;border-radius:16px;overflow:hidden;border:1px solid var(--line);
+    box-shadow:0 24px 60px -24px rgba(0,0,0,.75), 0 0 44px -20px var(--gold-dim)}
+  .portrait img{display:block;width:100%;height:auto}
+  .portrait::after{content:"";position:absolute;inset:0;pointer-events:none;
+    box-shadow:inset 0 0 0 1px rgba(217,164,65,.18), inset 0 -50px 50px -30px rgba(11,18,32,.7)}
+  @media(max-width:759px){.portrait{max-width:280px;margin:0 auto}}
+
+  /* ------- craft list ------- */
+  .craft{display:grid;gap:14px;margin-top:28px}
+  @media(min-width:640px){.craft{grid-template-columns:1fr 1fr}}
+  .craft .item{border-left:2px solid var(--gold-dim);padding:2px 0 2px 16px}
+  .craft .item:hover{border-left-color:var(--gold)}
+  .craft h3{margin:0 0 4px;font-size:16px}
+  .craft p{margin:0;color:var(--muted);font-size:14.5px}
+
+  /* ------- projects ------- */
+  .cards{display:grid;gap:22px;margin-top:32px}
+  @media(min-width:720px){.cards{grid-template-columns:repeat(3,1fr)}}
+  .card{
+    background:var(--panel);border:1px solid var(--line);border-radius:14px;overflow:hidden;
+    display:flex;flex-direction:column;transition:transform .18s,border-color .18s;
+  }
+  .card:hover{transform:translateY(-4px);border-color:var(--gold)}
+  .card figure{margin:0;position:relative;aspect-ratio:4/3;overflow:hidden}
+  .card figure img{width:100%;height:100%;object-fit:cover;display:block}
+  .card figure::after{content:"";position:absolute;inset:0;box-shadow:inset 0 -40px 40px -20px rgba(11,18,32,.85)}
+  .card .body{padding:18px 20px 20px;display:flex;flex-direction:column;gap:8px;flex:1}
+  .card h3{margin:0;font-family:var(--serif);font-size:20px}
+  .card p{margin:0;color:var(--muted);font-size:14.5px;flex:1}
+  .card .go{font-size:14px;color:var(--gold-soft)}
+  .card .go:hover{color:var(--gold)}
+
+  /* ------- detail feature ------- */
+  .detail-grid{display:grid;gap:32px;margin-top:32px;align-items:center}
+  @media(min-width:760px){.detail-grid{grid-template-columns:minmax(280px,380px) 1fr}}
+  .detail-card{position:relative;border-radius:14px;overflow:hidden;border:1px solid var(--line);
+    box-shadow:0 20px 60px -20px rgba(0,0,0,.7), 0 0 40px -18px var(--gold-dim)}
+  .detail-card video{display:block;width:100%;height:auto}
+  .detail-notes p{color:var(--muted);font-size:15.5px;margin:0 0 14px;max-width:58ch}
+  .detail-notes p b{color:var(--ink)}
+  .detail-notes .go{font-size:14.5px;color:var(--gold-soft)}
+
+  /* ------- experience ------- */
+  .roles{list-style:none;margin:28px 0 0;padding:0;position:relative}
+  .roles::before{content:"";position:absolute;left:5px;top:6px;bottom:6px;width:2px;
+    background:linear-gradient(180deg,var(--gold),rgba(217,164,65,.1))}
+  .roles li{position:relative;padding:0 0 26px 28px}
+  .roles li::before{content:"";position:absolute;left:0;top:7px;width:12px;height:12px;border-radius:50%;
+    background:var(--bg);border:2px solid var(--gold)}
+  .roles h3{margin:0;font-size:16.5px}
+  .roles .yr{color:var(--gold-soft);font-size:13px;letter-spacing:.06em}
+  .roles p{margin:4px 0 0;color:var(--muted);font-size:14.5px;max-width:60ch}
+
+  /* ------- contact ------- */
+  #contact{text-align:center;padding:84px 0}
+  #contact h2{margin-bottom:4px}
+  #contact .prose{margin:0 auto}
+  .call-action{
+    display:inline-block;margin-top:22px;font-family:var(--serif);font-size:clamp(22px,4vw,32px);
+    color:var(--gold-soft);border-bottom:2px solid var(--gold-dim);padding-bottom:6px;
+  }
+  .call-action:hover{color:var(--gold);border-bottom-color:var(--gold)}
+  .contact-links{margin-top:26px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+  .contact-links a{border:1px solid var(--line);background:var(--bg-soft);padding:9px 16px;border-radius:999px;font-size:14px;color:var(--ink)}
+  .contact-links a:hover{border-color:var(--gold);color:var(--gold-soft)}
+
+  footer{border-top:1px solid var(--line);padding:30px 0 60px;color:var(--muted);font-size:13.5px;text-align:center}
+  footer .kin{color:var(--gold);font-family:var(--serif);font-style:italic}
 </style>
 </head>
 <body>
-<header>
+
+<header class="hero">
   <div class="wrap">
-    <p class="eyebrow">Melbourne, Australia · AI &amp; Agentic Engineering</p>
-    <h1>Brad Hill — AI <span class="amp">&amp;</span> Agentic Engineer</h1>
-    <p class="lede">I design and ship agentic AI systems — production LLM tooling, MCP servers,
-      sub-agents and multi-agent pipelines. I currently lead Agentforce delivery at RACV, backed by
-      years building and shipping on demanding enterprise platforms.</p>
-    <p class="meta">Production LLM systems · Agents &amp; MCP · Agentforce Dev Lead ·
-      4+ yrs on Salesforce · <b>Platform Developer I</b></p>
-    <nav class="links">
-      <a href="mailto:Brad@bradhill.dev">Brad@bradhill.dev</a>
-      <a href="https://linkedin.com/in/brad-hill-8b8011119" rel="me">LinkedIn</a>
-      <a href="https://github.com/Bradels" rel="me">GitHub</a>
-    </nav>
+    <p class="eyebrow">Melbourne, Australia</p>
+    <h1>Brad Hill</h1>
+    <p class="sub">AI &amp; Agentic Engineer</p>
   </div>
 </header>
+
+<nav class="site">
+  <ul>
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#detail">In&nbsp;the&nbsp;detail</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li class="spacer"></li>
+    <li class="mail"><a href="mailto:Brad@bradhill.dev">Brad@bradhill.dev</a></li>
+  </ul>
+</nav>
+
+<section id="introduction">
+  <div class="wrap">
+    <p class="kicker">Introduction</p>
+    <h2>Systems, repaired with <span class="seamword">gold</span>.</h2>
+    <div class="intro-grid">
+      <div>
+        <p class="prose">
+          Kintsugi is the Japanese art of mending broken ceramics with seams of gold — the repair
+          becomes the most beautiful part. That's how I build software: take the brittle thing, the
+          manual process, the system straining at its limits, and rebuild it with something
+          <span class="gold">stronger and a little luminous</span>.
+        </p>
+        <p class="prose" style="margin-top:14px">
+          These days that means <b>agentic AI</b> — production LLM tooling, MCP servers, sub-agents and
+          multi-agent pipelines — as <b>Dev Lead of the Agentforce squad at RACV</b>, on a foundation of
+          years shipping on demanding enterprise platforms.
+        </p>
+      </div>
+      <div class="portrait">
+        <img src="assets/brad-portrait.webp" width="640" height="960" alt="Portrait of Brad Hill — three-quarter view, navy knit jacket, looking thoughtfully to the left">
+      </div>
+    </div>
+    <div class="craft">
+      <div class="item"><h3>Agentic systems</h3><p>LLM tooling, MCP servers, sub-agents, evals — agents that do real work, not demos.</p></div>
+      <div class="item"><h3>Applied AI at scale</h3><p>Internal tooling analysing thousands of customer interactions a day, in production.</p></div>
+      <div class="item"><h3>Agentforce &amp; Salesforce</h3><p>Leading delivery on Salesforce's agent platform — Apex, LWC, Experience Cloud underneath.</p></div>
+      <div class="item"><h3>Integration &amp; shipping</h3><p>MuleSoft, DataWeave, REST — a bias for making brittle things fast and resilient.</p></div>
+    </div>
+  </div>
+</section>
+
 <hr class="seam">
 
-<section id="focus">
+<section id="projects">
   <div class="wrap">
-    <h2>What I do</h2>
-    <div class="grid cols">
+    <p class="kicker">Projects</p>
+    <h2>Things I've built after hours</h2>
+    <div class="cards">
       <div class="card">
-        <h3>Agentic AI Engineering</h3>
-        <p>Designing and building agentic systems — LLM tooling, MCP servers, sub-agents, evaluation
-           harnesses and multi-agent pipelines that do real work.</p>
-        <div class="tags"><span class="tag">LLMs</span><span class="tag">Agents</span><span class="tag">MCP</span><span class="tag">Multi-agent</span><span class="tag">Evals</span></div>
+        <figure><img src="assets/project-academy.webp" width="800" height="600" loading="lazy" alt="Ornate playing cards repaired with gold kintsugi seams"></figure>
+        <div class="body">
+          <h3>The Academy</h3>
+          <p>A roguelite card-duel game — custom rules engine, animated board, multiplayer, shipped to the web.</p>
+          <a class="go" href="https://beyondtypical.dev/play/">Play it →</a>
+        </div>
       </div>
       <div class="card">
-        <h3>Applied AI in production</h3>
-        <p>Taking AI from prototype to production at scale — internal tooling that analyses
-           thousands of customer interactions a day, classifiers, and local-first LLMs.</p>
-        <div class="tags"><span class="tag">Azure AI</span><span class="tag">Python</span><span class="tag">Local LLMs</span></div>
+        <figure><img src="assets/project-agents.webp" width="800" height="800" loading="lazy" alt="Ceramic orbs connected by glowing gold veins, like a multi-agent constellation"></figure>
+        <div class="body">
+          <h3>Agentic tooling</h3>
+          <p>Local-first LLMs and multi-agent systems — MCP servers, sub-agents, provenance-tracked asset pipelines, voice interfaces.</p>
+          <a class="go" href="https://github.com/Bradels">On GitHub →</a>
+        </div>
       </div>
       <div class="card">
-        <h3>Agentforce &amp; Salesforce</h3>
-        <p>Leading delivery on Salesforce's agent platform, on top of years of production Apex, LWC
-           and Experience Cloud work.</p>
-        <div class="tags"><span class="tag">Agentforce</span><span class="tag">Apex</span><span class="tag">LWC</span><span class="tag">Experience Cloud</span></div>
-      </div>
-      <div class="card">
-        <h3>Integration &amp; shipping</h3>
-        <p>Connecting systems with MuleSoft, DataWeave and REST — with a bias for making brittle
-           things fast, resilient, and actually shipped end-to-end.</p>
-        <div class="tags"><span class="tag">MuleSoft</span><span class="tag">DataWeave</span><span class="tag">REST APIs</span><span class="tag">TypeScript</span></div>
+        <figure><img src="assets/brad-kintsugi.webp" width="800" height="1200" loading="lazy" alt="Gold-on-navy duotone portrait of Brad holding an ornate mace, kintsugi cracks radiating behind him"></figure>
+        <div class="body">
+          <h3>What's next?</h3>
+          <p>Always another seam to lay — from 24-hour game jams to original AI experiments. I never stop building.</p>
+          <a class="go" href="#contact">Say hello →</a>
+        </div>
       </div>
     </div>
   </div>
 </section>
+
+<hr class="seam">
+
+<section id="detail">
+  <div class="wrap">
+    <p class="kicker">In the detail</p>
+    <h2>One card, under the <span class="seamword">light</span></h2>
+    <div class="detail-grid">
+      <div class="detail-card">
+        <video autoplay muted loop playsinline preload="metadata" poster="assets/project-academy.webp" aria-label="A trading card with a crystal frame, catching moving light as a foil shader plays across it">
+          <source src="assets/foil-card.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="detail-notes">
+        <p>This is a card from <b>The Academy</b>, rendered live in a single WebGL shader — a
+           crystal frame with cut facets and gold trim, a parchment face rasterised to a texture,
+           and a foil layer that answers the light.</p>
+        <p>The foil isn't random sparkle. Hotspots are <b>pinned to the frame's natural flare
+           points</b> — corners rake with streak-crosses, edge-midpoints bloom with diffuse
+           spectra — and each one flashes white-hot only when the moving light truly aligns with
+           it, the way a real foil card behaves in your hand.</p>
+        <p class="prose" style="font-size:14.5px">Details matter. This one took an evening of
+           sliders, argument, and gold.</p>
+        <a class="go" href="https://beyondtypical.dev/play/">See it in the game →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <hr class="seam">
 
 <section id="experience">
   <div class="wrap">
-    <h2>Experience</h2>
-    <ul class="stack">
-      <li class="role">
-        <div>
-          <h3>Dev Lead, Agentforce Squad — RACV</h3>
-          <p>Leading development on Salesforce's AI agent platform; the enterprise-side technical
-             owner and quality gate on our Salesforce engagements.</p>
-        </div>
-        <span class="yr">2026 – now</span>
+    <p class="kicker">Experience</p>
+    <h2>The road so far</h2>
+    <ul class="roles">
+      <li>
+        <h3>Dev Lead, Agentforce Squad — RACV</h3><span class="yr">2026 – now</span>
+        <p>Leading development on Salesforce's AI agent platform; the enterprise-side technical owner and quality gate on our Salesforce engagements.</p>
       </li>
-      <li class="role">
-        <div>
-          <h3>AI Backend Developer — RACV</h3>
-          <p>Built internal AI tooling on Azure for analysing customer-contact data at scale.</p>
-        </div>
-        <span class="yr">2025 – 2026</span>
+      <li>
+        <h3>AI Backend Developer — RACV</h3><span class="yr">2025 – 2026</span>
+        <p>Built internal AI tooling on Azure for analysing customer-contact data at scale.</p>
       </li>
-      <li class="role">
-        <div>
-          <h3>Salesforce Developer — RACV</h3>
-          <p>LWC in a customer-facing Experience Cloud community on the high-volume new-business journey.</p>
-        </div>
-        <span class="yr">2022 – 2025</span>
+      <li>
+        <h3>Salesforce Developer — RACV</h3><span class="yr">2022 – 2025</span>
+        <p>LWC in a customer-facing Experience Cloud community on the high-volume new-business journey.</p>
       </li>
-      <li class="role">
-        <div>
-          <h3>Software Developer — Dennis Family Corporation</h3>
-          <p>Salesforce and MuleSoft; took one integration from 30+ minutes to ~70 seconds.</p>
-        </div>
-        <span class="yr">2022</span>
+      <li>
+        <h3>Software Developer — Dennis Family Corporation</h3><span class="yr">2022</span>
+        <p>Salesforce and MuleSoft; took one integration from 30+ minutes to ~70 seconds.</p>
       </li>
     </ul>
   </div>
 </section>
+
 <hr class="seam">
 
-<section id="work">
+<section id="contact">
   <div class="wrap">
-    <h2>Selected side projects</h2>
-    <div class="grid cols">
-      <div class="card">
-        <h3>The Academy</h3>
-        <p>A roguelite card-duel game — custom rules engine, animated board, built and shipped to the web.</p>
-        <div class="tags"><span class="tag">Svelte</span><span class="tag">TypeScript</span><span class="tag">Game engine</span></div>
-      </div>
-      <div class="card">
-        <h3>Local-first AI tooling</h3>
-        <p>Running and building around local LLMs and multi-agent systems — MCP servers, sub-agents,
-           and asset-generation pipelines.</p>
-        <div class="tags"><span class="tag">LLMs</span><span class="tag">Agents</span><span class="tag">Python</span></div>
-      </div>
+    <p class="kicker">Contact</p>
+    <h2>Say hello</h2>
+    <p class="prose">The fastest way to reach me:</p>
+    <a class="call-action" href="mailto:Brad@bradhill.dev">Brad@bradhill.dev</a>
+    <div class="contact-links">
+      <a href="https://linkedin.com/in/brad-hill-8b8011119" rel="me">LinkedIn</a>
+      <a href="https://github.com/Bradels" rel="me">GitHub</a>
     </div>
-    <p style="margin-top:18px;color:var(--muted);font-size:14px">More on <a href="https://github.com/Bradels" rel="me">GitHub</a>.</p>
   </div>
 </section>
-<hr class="seam">
 
 <footer>
-  <div class="wrap">
-    <p>Melbourne, Australia · <a href="mailto:Brad@bradhill.dev">Brad@bradhill.dev</a> ·
-       <a href="https://linkedin.com/in/brad-hill-8b8011119" rel="me">LinkedIn</a> ·
-       <a href="https://github.com/Bradels" rel="me">GitHub</a></p>
-    <p class="sig">Brad Hill</p>
-  </div>
+  <p>Built by Brad Hill, with his own AI pipeline — the art on this page was generated and
+     provenance-tracked through <em>asset-forge</em>, his local asset system; the portrait is his
+     real photo, AI-retouched. · <span class="kin">金継ぎ — repaired with gold</span></p>
 </footer>
+<script>
+  // Respect reduced-motion: pause the foil loop for users who ask for stillness.
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches)
+    document.querySelectorAll('video[autoplay]').forEach(v => { v.autoplay = false; v.pause(); });
+</script>
+
 </body>
 </html>

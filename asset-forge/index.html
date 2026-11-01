@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0b1220">
+<title>Asset Forge · Brad Hill</title>
+<meta name="description" content="A gateway that gives every generated asset a provenance.">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<nav class="top"><div class="wrap"><a href="../index.html" class="me">Brad Hill</a><span>Ventures and what they taught me</span></div></nav>
+<main class="wrap venture">
+  <p class="kicker">Venture 03</p>
+  <h1>Asset Forge</h1>
+  <p class="tagline">A gateway that gives every generated asset a provenance.</p>
+  <span class="badge success">Success</span>
+
+  <section><h2>The idea</h2><p>In development it can be hard to track the provenance of the different assets you use: which were AI-generated, and which were sourced from somewhere else.</p></section>
+  <section><h2>The solution</h2><p>Asset Forge is a strict MCP tool that gates every generative asset in my projects. Agents can't call OpenAI or ElevenLabs directly. They have to go through the gateway, which tags each asset with a deterministic UUIDv5 and records it in a ledger, so I know which assets are AI-generated and which came from elsewhere.</p><p>It also allows for iterative review. Assets are published in review batches, and my feedback is stamped to each asset's ID, so it survives regeneration.</p></section>
+  <section><h2>The outcome</h2><p class="verdict">Success.</p><p>Every asset in my game projects has an ID and a ledger entry recording where it came from, and my reviews attach to that ID.</p></section>
+
+  <figure class="chart">
+    <div class="stats"><div class="stat"><b>633</b><span>ledger events</span></div><div class="stat"><b>274</b><span>assets with an ID</span></div><div class="stat"><b>241</b><span>AI-generated</span></div><div class="stat"><b>129/180</b><span>reviews approved</span></div></div>
+    <div class="wide"><svg viewBox="0 0 720 284" role="img" aria-label="Where each asset came from" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif"><text x="182" y="51" fill="#e8edf7" font-size="13" text-anchor="end">OpenAI</text><rect x="190" y="39" width="484" height="18" rx="2" fill="#d9a441"/><text x="680" y="52" fill="#9fb0cc" font-size="12">122</text><text x="182" y="81" fill="#e8edf7" font-size="13" text-anchor="end">Gemini</text><rect x="190" y="69" width="289.60655737704917" height="18" rx="2" fill="#d9a441"/><text x="485.60655737704917" y="82" fill="#9fb0cc" font-size="12">73</text><text x="182" y="111" fill="#e8edf7" font-size="13" text-anchor="end">AI, provider not recorded</text><rect x="190" y="99" width="103.14754098360655" height="18" rx="2" fill="#d9a441"/><text x="299.1475409836065" y="112" fill="#9fb0cc" font-size="12">26</text><text x="182" y="141" fill="#e8edf7" font-size="13" text-anchor="end">ElevenLabs</text><rect x="190" y="129" width="75.37704918032787" height="18" rx="2" fill="#d9a441"/><text x="271.37704918032784" y="142" fill="#9fb0cc" font-size="12">19</text><text x="182" y="171" fill="#e8edf7" font-size="13" text-anchor="end">Sourced (Freesound)</text><rect x="190" y="159" width="67.44262295081967" height="18" rx="2" fill="#7d9cd1"/><text x="263.44262295081967" y="172" fill="#9fb0cc" font-size="12">17</text><text x="182" y="201" fill="#e8edf7" font-size="13" text-anchor="end">Derived from other assets</text><rect x="190" y="189" width="47.60655737704918" height="18" rx="2" fill="#5d6b85"/><text x="243.60655737704917" y="202" fill="#9fb0cc" font-size="12">12</text><text x="182" y="231" fill="#e8edf7" font-size="13" text-anchor="end">Procedural placeholder</text><rect x="190" y="219" width="15.868852459016395" height="18" rx="2" fill="#7d9cd1"/><text x="211.8688524590164" y="232" fill="#9fb0cc" font-size="12">4</text><text x="182" y="261" fill="#e8edf7" font-size="13" text-anchor="end">ComfyUI (local)</text><rect x="190" y="249" width="3.9672131147540988" height="18" rx="2" fill="#d9a441"/><text x="199.9672131147541" y="262" fill="#9fb0cc" font-size="12">1</text><rect x="190" y="8" width="12" height="12" rx="2" fill="#d9a441"/><text x="208" y="18" fill="#9fb0cc" font-size="12">AI-generated</text><rect x="350" y="8" width="12" height="12" rx="2" fill="#7d9cd1"/><text x="368" y="18" fill="#9fb0cc" font-size="12">Sourced or procedural</text><rect x="510" y="8" width="12" height="12" rx="2" fill="#5d6b85"/><text x="528" y="18" fill="#9fb0cc" font-size="12">Derived</text></svg></div><div class="narrow"><svg viewBox="0 0 400 284" role="img" aria-label="Where each asset came from" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif"><text x="150" y="51" fill="#e8edf7" font-size="12" text-anchor="end">OpenAI</text><rect x="158" y="39" width="196" height="18" rx="2" fill="#d9a441"/><text x="360" y="52" fill="#9fb0cc" font-size="12">122</text><text x="150" y="81" fill="#e8edf7" font-size="12" text-anchor="end">Gemini</text><rect x="158" y="69" width="117.27868852459017" height="18" rx="2" fill="#d9a441"/><text x="281.27868852459017" y="82" fill="#9fb0cc" font-size="12">73</text><text x="150" y="111" fill="#e8edf7" font-size="12" text-anchor="end">AI, provider not recorded</text><rect x="158" y="99" width="41.77049180327869" height="18" rx="2" fill="#d9a441"/><text x="205.77049180327867" y="112" fill="#9fb0cc" font-size="12">26</text><text x="150" y="141" fill="#e8edf7" font-size="12" text-anchor="end">ElevenLabs</text><rect x="158" y="129" width="30.524590163934427" height="18" rx="2" fill="#d9a441"/><text x="194.52459016393442" y="142" fill="#9fb0cc" font-size="12">19</text><text x="150" y="171" fill="#e8edf7" font-size="12" text-anchor="end">Sourced (Freesound)</text><rect x="158" y="159" width="27.311475409836063" height="18" rx="2" fill="#7d9cd1"/><text x="191.31147540983608" y="172" fill="#9fb0cc" font-size="12">17</text><text x="150" y="201" fill="#e8edf7" font-size="12" text-anchor="end">Derived from other assets</text><rect x="158" y="189" width="19.278688524590162" height="18" rx="2" fill="#5d6b85"/><text x="183.27868852459017" y="202" fill="#9fb0cc" font-size="12">12</text><text x="150" y="231" fill="#e8edf7" font-size="12" text-anchor="end">Procedural placeholder</text><rect x="158" y="219" width="6.426229508196721" height="18" rx="2" fill="#7d9cd1"/><text x="170.4262295081967" y="232" fill="#9fb0cc" font-size="12">4</text><text x="150" y="261" fill="#e8edf7" font-size="12" text-anchor="end">ComfyUI (local)</text><rect x="158" y="249" width="2" height="18" rx="2" fill="#d9a441"/><text x="166" y="262" fill="#9fb0cc" font-size="12">1</text><rect x="4" y="8" width="12" height="12" rx="2" fill="#d9a441"/><text x="22" y="18" fill="#9fb0cc" font-size="12">AI-generated</text><rect x="104" y="8" width="12" height="12" rx="2" fill="#7d9cd1"/><text x="122" y="18" fill="#9fb0cc" font-size="12">Sourced or procedural</text><rect x="258" y="8" width="12" height="12" rx="2" fill="#5d6b85"/><text x="276" y="18" fill="#9fb0cc" font-size="12">Derived</text></svg></div>
+    <figcaption>274 assets, each with its own ID, and the ledger knows which 241 were AI-generated. 129 of 180 asset reviews ended in approval. 62 prompt records are left out.<small>Source: asset-forge/provenance/ledger.jsonl and feedback.jsonl; one asset per GUID, by its latest successful event.</small></figcaption>
+  </figure>
+
+  <section><h2>The learnings</h2>
+    <div class="learn">
+      <div><h3 class="right">What went right</h3><ul class="right"><li>Observability of agents is important, but it needs to go deeper. If an agent is sourcing something from somewhere, making it do so through a gateway is a great tool.</li></ul></div>
+      <div><h3 class="wrong">What went wrong</h3><ul class="wrong"><li>Local asset generators consumed a lot of VRAM, so agents would spend time waiting for VRAM to free up, or for Asset Forge to come back online.</li><li>Even for simple requests, agents followed a rigorous plan that included review. In future I'd build a skill that tells the agent whether I want to review the assets, and control the context through skills rather than embedding it in the top-level context.</li></ul></div>
+    </div>
+  </section>
+
+  <nav class="pager">
+    <a href="../interactive-plans/index.html">← Interactive plans</a>
+    <a href="../index.html">All ventures →</a>
+  </nav>
+</main>
+<footer><div class="wrap">
+  <p>Every chart here is generated at build time from the repositories and ledgers it describes.</p>
+  <p><a href="https://www.linkedin.com/in/brad-hill-8b8011119">LinkedIn</a> · <a href="https://github.com/Bradels">GitHub</a></p>
+</div></footer>
+</body>
+</html>

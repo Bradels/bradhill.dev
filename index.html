@@ -4,39 +4,41 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#0b1220">
-<title>Brad Hill · AI &amp; Agentic Engineer</title>
-<meta name="description" content="Brad Hill, AI and agentic engineer in Melbourne. A new site about his ventures in AI and agentic engineering is on its way.">
-<style>
-  :root{--bg:#0b1220;--line:#22304f;--ink:#e8edf7;--muted:#9fb0cc;--gold:#d9a441;--gold-soft:#f0c877;
-        --serif:Georgia,"Times New Roman",serif;--sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
-  *{box-sizing:border-box}
-  html,body{height:100%}
-  body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.65 var(--sans);-webkit-font-smoothing:antialiased;
-       display:flex;align-items:center;justify-content:center;padding:32px 16px}
-  main{max-width:620px;width:100%}
-  .eyebrow{color:var(--gold);letter-spacing:.16em;text-transform:uppercase;font-size:12px;font-weight:600;margin:0 0 12px}
-  h1{font-family:var(--serif);font-size:clamp(44px,10vw,72px);line-height:1.02;margin:0}
-  .sub{font-family:var(--serif);font-style:italic;color:var(--gold-soft);font-size:clamp(19px,4vw,24px);margin:12px 0 22px}
-  hr{height:2px;border:0;margin:0 0 22px;
-     background:linear-gradient(90deg,transparent,var(--gold) 30%,var(--gold-soft) 50%,var(--gold) 70%,transparent)}
-  p{color:var(--muted);margin:0 0 16px}
-  nav{display:flex;gap:20px;margin-top:26px;flex-wrap:wrap}
-  a{color:var(--gold-soft);text-decoration:none;border-bottom:1px solid rgba(217,164,65,.35)}
-  a:hover{color:var(--gold);border-color:var(--gold)}
-</style>
+<title>Brad Hill · Ventures and what they taught me</title>
+<meta name="description" content="AI and agentic engineering ventures, each told as the idea, the solution, the outcome and the learnings.">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-<main>
-  <p class="eyebrow">AI &amp; Agentic Engineer · Melbourne</p>
-  <h1>Brad Hill</h1>
-  <p class="sub">A new site is on its way.</p>
-  <hr>
-  <p>I'm rebuilding this site around my ventures in AI and agentic engineering. Each one is told the same way:
-     the idea, the solution, the outcome, and what I learned, including where it fell short.</p>
-  <nav>
-    <a href="https://www.linkedin.com/in/brad-hill-8b8011119">LinkedIn</a>
-    <a href="https://github.com/Bradels">GitHub</a>
-  </nav>
-</main>
+<nav class="top"><div class="wrap"><a href="index.html" class="me">Brad Hill</a><span>Ventures and what they taught me</span></div></nav>
+<header class="hero"><div class="wrap">
+  <p class="kicker">AI &amp; Agentic Engineer · Melbourne</p>
+  <h1>Ventures, and what they taught me</h1>
+  <p class="lead">Outside work I build agentic systems, then write down what worked and what didn't. Each venture follows the same four parts: the idea, the solution, the outcome, and the learnings, including where it fell short.</p>
+  <p class="tally"><span class="badge success">Success</span> <span>2</span> <span class="badge partial">Partial success</span> <span>1</span></p>
+</div></header>
+<main class="wrap"><div class="cards">
+<a class="card" href="agentic-infrastructure/index.html">
+    <span class="kicker">Venture 01</span>
+    <h2>Agentic infrastructure</h2>
+    <p>Agentic development from my phone, on an always-on PC and AWS.</p>
+    <span class="badge success">Success</span>
+  </a>
+<a class="card" href="interactive-plans/index.html">
+    <span class="kicker">Venture 02</span>
+    <h2>Interactive plans</h2>
+    <p>Plans any agent can write, and I can annotate from any device.</p>
+    <span class="badge partial">Partial success</span>
+  </a>
+<a class="card" href="asset-forge/index.html">
+    <span class="kicker">Venture 03</span>
+    <h2>Asset Forge</h2>
+    <p>A gateway that gives every generated asset a provenance.</p>
+    <span class="badge success">Success</span>
+  </a>
+</div></main>
+<footer><div class="wrap">
+  <p>Every chart here is generated at build time from the repositories and ledgers it describes.</p>
+  <p><a href="https://www.linkedin.com/in/brad-hill-8b8011119">LinkedIn</a> · <a href="https://github.com/Bradels">GitHub</a></p>
+</div></footer>
 </body>
 </html>

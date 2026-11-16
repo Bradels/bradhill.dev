@@ -68,6 +68,15 @@ table.talk td:first-child{white-space:nowrap;font-weight:600}table.talk small{co
 .note{color:var(--muted);font-size:14px}
 .findings,.fixed{padding-left:22px;max-width:66ch}.findings li,.fixed li{margin-bottom:10px}
 .findings li::marker,.fixed li::marker{color:var(--gold)}
+.series .parts{list-style:none;margin:0;padding:0;border-left:2px solid var(--line)}
+.series .part{position:relative;padding:0 0 18px 20px}
+.series .part::before{content:"";position:absolute;left:-7px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--bg);border:2px solid var(--gold)}
+.series .part h3{font-size:20px;margin:0 0 8px}
+.series .part .chart{margin-top:16px}
+.panels .grid{display:grid;gap:14px 24px}
+@media(min-width:700px){.panels .grid{grid-template-columns:1fr 1fr}}
+.panels svg{margin-top:0}
+.pic video{display:block;width:100%;height:auto;border-radius:12px;border:1px solid var(--line)}
 .pager{display:flex;justify-content:space-between;gap:12px;margin-top:48px;padding-top:20px;border-top:1px solid var(--line);flex-wrap:wrap}
 footer{border-top:1px solid var(--line);color:var(--muted);font-size:14px;padding:20px 0 32px}
 footer p{margin:4px 0}
